@@ -10,4 +10,4 @@
 ![teaser_](https://github.com/user-attachments/assets/6f94e6b0-f26e-426b-aa84-7429f0f854b5)
 
 
-Code, model and dataset will be released soon, stay tuned!
+Code, Dataset, and Models will be released soon, stay tuned!
