@@ -1,0 +1,40 @@
+experiment_name: "sd2.1_deocclusion_ours_pseudo_ldm"
+
+training:
+  learning_rate: 5e-5
+  weight_decay: 1e-6
+  betas: [0.9, 0.999]
+  batch_size: 3
+  max_steps: 50000
+  accumulate_grad_batches: 16
+  num_workers: 16
+  # devices: [5]
+  devices: [5,6,7]
+  # gpus: [0,1,2,3,4,5,6]
+  check_val_every_n_epoch: 1
+  gradient_clip_val: 0.1
+  precision: bf16
+  resume_from_checkpoint: ~
+
+  p_drop_condition: 0.2
+
+dataset:
+  module: datasets.ours.OurPseudoDataset
+  args:
+    image_dir: "SynergyAmodal16K/images"
+    amodal_dir: "SynergyAmodal16K/amodal_rgbs"
+    amodal_annotations_path: "SynergyAmodal16K/amodal_annotations.json"
+    image_size: 512
+    length_multiplier: 100
+
+
+val_dataset:
+  module: datasets.ours.OurPseudoDataset
+  args:
+    image_dir: "SynergyAmodal16K/images"
+    amodal_dir: "SynergyAmodal16K/amodal_rgbs"
+    amodal_annotations_path: "SynergyAmodal16K/amodal_annotations.json"
+    image_size: 512
+    length_multiplier: 1
+
+
