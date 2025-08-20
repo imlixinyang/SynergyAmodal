@@ -49,6 +49,8 @@ wget https://huggingface.co/cloudyfall/DeoccAnything/resolve/main/vae_ckpt_dir/e
 wget https://huggingface.co/cloudyfall/DeoccAnything/resolve/main/ldm_ckpt_dir/epoch%3D8-step%3D58000.ckpt?download=true -O ldm.ckpt
 ```
 
+Download the pre-trained weights of ZIM from [the official GitHub repository](https://github.com/naver-ai/ZIM).
+
 ## Dataset
 Download and extract our dataset with:
 ```
