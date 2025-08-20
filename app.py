@@ -52,8 +52,8 @@ class DataAppInference:
 
         args = Dict(
             config="configs/inpainter_ours_pseudo.yaml",
-            ldm_ckpt_dir="ldm_ckpt_dir",
-            vae_ckpt_dir="vae_ckpt_dir",
+            ldm_ckpt="ldm.ckpt",
+            vae_ckpt="vae.ckpt",
             device=self.configs.device
         )
 
@@ -61,14 +61,14 @@ class DataAppInference:
 
         from trainer_deocclusion_pseudo import InpaintingTrainer
 
-        system = InpaintingTrainer.load_from_checkpoint(os.path.join(args.ldm_ckpt_dir, os.listdir(args.ldm_ckpt_dir)[0]), map_location=args.device, strict=True, opt=opt).to(args.device)
+        system = InpaintingTrainer.load_from_checkpoint(args.ldm_ckpt, map_location=args.device, strict=True, opt=opt).to(args.device)
     
         system.model_ema.load_ema_params(system.unet)
         del system.model_ema
 
         from trainer_deocclusion_pseudo_decoder import RGBADecoderTrainer
             
-        mask_decoder = RGBADecoderTrainer.load_from_checkpoint(os.path.join(args.vae_ckpt_dir, os.listdir(args.vae_ckpt_dir)[0]), map_location=args.device, strict=True).to(args.device)
+        mask_decoder = RGBADecoderTrainer.load_from_checkpoint(args.vae_ckpt, map_location=args.device, strict=True).to(args.device)
 
         mask_decoder.model_ema.load_ema_params(mask_decoder.vae.decoder)
 
