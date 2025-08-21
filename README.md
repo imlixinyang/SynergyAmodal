@@ -28,12 +28,17 @@ conda activate synergyamodal
 
 - install pytorch (or use your own if it is compatible with ```xformers```)
 ```
-conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.7 -c pytorch -c nvidia
+conda install pytorch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 pytorch-cuda=11.8 -c pytorch -c nvidia
 ```
 
 - install ```xformers``` for momory-efficient attention
 ```
 conda install xformers -c xformers
+```
+
+- install ```pip``` packages
+```
+pip install -r requirements.txt
 ```
 
 - clone this repo:

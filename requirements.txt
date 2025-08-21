@@ -1,0 +1,12 @@
+accelerate==1.0.1
+addict==2.4.0
+diffusers==0.31.0
+easydict==1.13
+gradio==5.25.2
+numpy==1.26.4
+omegaconf==2.3.0
+onnxruntime==1.22.0
+opencv-python==4.11.0.86
+pycocotools==2.0.8
+pytorch_lightning==2.5.0
+transformers==4.45.0

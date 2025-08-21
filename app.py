@@ -13,6 +13,7 @@ from torchvision.utils import save_image
 dilate_opt = lambda x, kernel_size=5: F.max_pool2d(x[None], kernel_size=kernel_size, stride=1, padding=kernel_size//2)[0]
 
 save_tmp_dir = './tmp/app'
+os.makedirs(save_tmp_dir, exist_ok=True)
 
 draw_points = False
 
