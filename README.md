@@ -54,7 +54,7 @@ wget https://huggingface.co/cloudyfall/DeoccAnything/resolve/main/vae_ckpt_dir/e
 wget https://huggingface.co/cloudyfall/DeoccAnything/resolve/main/ldm_ckpt_dir/epoch%3D8-step%3D58000.ckpt?download=true -O ldm.ckpt
 ```
 
-Download the pre-trained weights of ZIM from [the official GitHub repository](https://github.com/naver-ai/ZIM).
+Download the pre-trained weights of ZIM from [the official ZIM repository](https://github.com/naver-ai/ZIM). We thank the ZIM team for this excellent work.
 
 ## Dataset
 Download and extract our dataset with:
@@ -62,6 +62,8 @@ Download and extract our dataset with:
 wget https://huggingface.co/datasets/cloudyfall/SynergyAmodal16K/resolve/main/dataset.tar.gz
 tar -xzvf dataset.tar.gz
 ```
+
+The original images are from [the official EntitySeg repository](https://github.com/adobe-research/EntitySeg-Dataset). Please follow its licences, which only allows for non-commercial research use.
 
 ## Citation
 
@@ -77,8 +79,6 @@ tar -xzvf dataset.tar.gz
 
 ## License
 
-Licensed under the CC BY-NC-SA 4.0 (Attribution-NonCommercial-ShareAlike 4.0 International)
-
-The code is released for academic research use only. 
+Our code and annotations are released under the CC BY-NC-SA 4.0 (Attribution-NonCommercial-ShareAlike 4.0 International) Licensed, for academic research use only. 
 
 If you have any questions, please contact me via [imlixinyang@gmail.com](mailto:imlixinyang@gmail.com). 
